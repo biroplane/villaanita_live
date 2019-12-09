@@ -1,0 +1,123 @@
+<?php get_header()?>
+<article class="app">
+  <nav class="navbar d-none">
+    <button class="btn "><i class="material-icons">menu</i></button>
+  </nav>
+  <aside class="drawer">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+  </aside>
+  <main>
+
+    <!-- PAGE 1 -->
+    <article class="page page-start border-green middlepage">
+      <div class="container-fluid ">
+        <div class="offset-md-3 col-md-6">
+          <div class="row"><img src="<?=get_template_directory_uri(  )?>/src/assets/img/logo.png" height="100"></div>
+          <div class="row">
+            <nav class="homemenu">
+              <ul>
+                <li><a href="#centrodiurno">Centro Diurno</a></li>
+                <li><a href="#">Giardino</a></li>
+                <li><a href="#">Ricerca</a></li>
+                <li><a href="#">Mappa</a></li>
+                <li><a href="#">Contatti</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="row">
+            <div class="img-crop"><img src="<?=get_template_directory_uri()?>/src/assets/img/BZ9A9518.jpg" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <!-- PAGE 2 -->
+    <article class="page page-end border-green">
+      <a name="centrodiurno"></a>
+      <div class="container">
+        <div class="row">
+          <div class="jumbotron">
+            <h1 class="display-4 text-primary">Villa Anita</h1>
+            <?php
+            
+            $post= get_post( getenv("HOME_JUMBOTRON") );
+            //var_dump($post);
+            ?>
+            <p class="lead"><?=$post->post_excerpt?></p>
+            <hr class="my-4">
+
+            <a class="btn btn-primary btn-lg" href="<?=$post->link?>" role="button">Learn more</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <?php
+            $post= wp_get_single_post( getenv("HOME_STRUCT") );
+            //var_dump($post);
+            ?>
+            <h4><?=$post->post_title;?></h4>
+            <p><?=$post->post_excerpt;?></p>
+            <button class="btn btn-outline-primary btn-sm">Leggi</button>
+          </div>
+          <div class="col-md-4"><?php
+            $post= wp_get_single_post( getenv("HOME_GARDEN") );
+            //var_dump($post);
+            ?>
+            <h4><?=$post->post_title;?></h4>
+            <p><?=$post->post_excerpt;?></p>
+            <button class="btn btn-outline-primary btn-sm">Leggi</button>
+          </div>
+          <div class="col-md-4"><?php
+            $post= wp_get_single_post( getenv("HOME_MISSION") );
+            //var_dump($post);
+            ?>
+            <h4><?=$post->post_title;?></h4>
+            <p><?=$post->post_excerpt;?></p>
+            <button class="btn btn-outline-primary btn-sm">Leggi</button>
+          </div>
+        </div>
+      </div>
+    </article>
+    <!-- PAGE 3 RICERCA -->
+    <article class="page page-single border-purple ricerca" id="ricerca">
+      <a name="ricerca"></a>
+      <div class="dna">
+        <img src="<?=get_template_directory_uri(  )?>/src/assets/img/ricerca_crop_fr.png')" class="first">
+        <img src="<?=get_template_directory_uri(  )?>/src/assets/img/ricerca_crop_fr.png')" class="second">
+      </div>
+      <div class="container d-flex flex-column justify-content-center full-height">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="display-1 sf_font">Ricerca e<br>Sviluppo</h1>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-md-6 justify-content-center">
+            <p class="text-white">
+              <?php
+            $post= wp_get_single_post( getenv("HOME_MISSION") );
+            //var_dump($post);
+            print $post->post_excerpt;
+            ?>
+            </p>
+            <button class="btn btn-outline-purple">Scopri di Pi&ugrave;</button>
+
+          </div>
+        </div>
+      </div>
+
+    </article>
+    <!-- PAGE 3 RICERCA -->
+    <article class="page page-single border-grey">
+      <div id="map"></div>
+    </article>
+
+  </main>
+  </div>
+  <?php get_footer()?>

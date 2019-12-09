@@ -1,0 +1,12 @@
+nav.navbar {
+  background: #fff;
+  position: fixed;
+  width: calc(100vw - 6vmin);
+  height: 4rem;
+  left: 3vmin;
+  top: 3vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=navbar.css.map */

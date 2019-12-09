@@ -1,0 +1,45 @@
+.page {
+  min-height: 100vh !important;
+}
+
+.border-green {
+  border-color: $green !important;
+}
+
+.border-red {
+  border-color: $red !important;
+}
+
+.border-purple {
+  border-color: $purple !important;
+}
+
+.border-grey {
+  border-color: $dark-grey !important;
+}
+
+.page-single {
+  border: $page_border solid;
+}
+
+.page-start {
+  border-left: $page_border solid;
+  border-right: $page_border solid;
+  border-top: $page_border solid;
+}
+
+.page-continue {
+  border-left: $page_border solid;
+  border-right: $page_border solid;
+}
+
+.page-end {
+  border-left: $page_border solid;
+  border-right: $page_border solid;
+  border-bottom: $page_border solid;
+}
+
+.fill-width {
+  width: 100% !important;
+  border: 1px solid tomato;
+}
