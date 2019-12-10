@@ -1,21 +1,43 @@
-require('./assets/scss/main.scss');
-import 'bootstrap';
-import 'material-design-icons';
-var el = document.getElementById('map')
-// var map
-// var marker;
-// var mapStyle = style;
+require("./assets/scss/main.scss");
+import "@mdi/font/css/materialdesignicons.css";
+import "bootstrap";
+import loadGoogleMapsApi from "load-google-maps-api";
+import "material-design-icons";
+import markerIcon from "./assets/img/marker.png";
+import style from "./assets/js/googlemaps_style";
+// import {
+//   Map
+// } from './assets/js/maps';
 
-// function initMap() {
-//   map = new google.maps.Map(el, {
-//     zoom: 17,
-//     center: marker,
-//     styles: mapStyle,
-//     disableDefaultUI: true,
-//     zoomControl: false,
-//     scaleControl: false,
-//     gestureHandling: 'none'
-//   })
-// }
+var map;
+var marker = {
+  lat: 41.127492,
+  lng: 16.530003,
+  icon: markerIcon
+};
+var el = document.getElementById("map");
 
-// initMap()
+document.addEventListener("DOMContentLoaded", function() {
+  const mapOptions = {
+    zoom: 17,
+    center: marker,
+    styles: style,
+    disableDefaultUI: true,
+    zoomControl: false,
+    scaleControl: false,
+    gestureHandling: "none"
+  };
+  loadGoogleMapsApi({
+    key: process.env.GOOGLE_MAPS_API_KEY
+  }).then(function(googleMaps) {
+    map = new googleMaps.Map(el, mapOptions);
+
+    marker = new google.maps.Marker({
+      lat: 41.127492,
+      lng: 16.530003,
+      map: map,
+      icon: markerIcon
+    });
+    console.log("MARKER ICON ", marker, map);
+  });
+});

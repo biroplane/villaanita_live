@@ -113,7 +113,30 @@
       </div>
 
     </article>
-    <!-- PAGE 3 RICERCA -->
+    <article class="page page-single border-grey">
+      <div class="container">
+        <div class="row">
+          <?php 
+            $news = file_get_contents(__DIR__."/.env");
+            print_r($news);
+          ?>
+          <div class="col-md-4">
+            <h1>CARD</h1>
+            <div class="card" style="width:100%">
+              <div class="card-header">Card 1</div>
+              <div class="card-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, id nesciunt.
+                Distinctio aliquid quas error autem minus reprehenderit explicabo voluptatibus fugit. Soluta incidunt
+                sequi ducimus reprehenderit, eveniet nam iusto assumenda?</div>
+              <div class="card-footer"></div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </article>
+    <!-- PAGE 5 GOOGLE MAP -->
     <article class="page page-single border-grey">
       <div id="map"></div>
     </article>

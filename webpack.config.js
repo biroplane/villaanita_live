@@ -2,9 +2,8 @@ const path = require("path");
 const Uglify = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
-const webpack = require("webpack")
+const webpack = require("webpack");
 const Dotenv = require("dotenv-webpack");
-
 
 // const ExtractTextPlugin = require("extract-text-webpack-plugin");
 // const extractScss = new ExtractTextPlugin({
@@ -30,7 +29,8 @@ module.exports = {
     path: path.resolve(__dirname, "dist")
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
@@ -42,7 +42,8 @@ module.exports = {
       },
       {
         test: /.(sa|sc|c)ss$/,
-        use: [{
+        use: [
+          {
             loader: "style-loader"
           },
           {

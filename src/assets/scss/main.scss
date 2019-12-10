@@ -1,5 +1,5 @@
 @import "./variables.scss";
-$theme-colors: ("primary":$green,
+$theme-colors: ("primary": $green,
   "danger": #ff36a5);
 
 @import "~bootstrap/scss/bootstrap-reboot";
@@ -17,18 +17,16 @@ $body-font-family: "San Francisco";
 //     }
 // }
 
-
-
 html {
   scroll-behavior: smooth !important;
 }
 
 html,
 body {
-  width: 100vw;
+  width: 100vw !important;
   height: 100%;
   font-family: $body-font-family, sans-serif !important;
-
+  overflow: hidden !important;
 }
 
 h1,
@@ -47,7 +45,6 @@ h6 {
 @import "./drawer.scss";
 @import "./navbar.scss";
 @import "./page.scss";
-
 
 .btn-circle {
   border-radius: 50%;
@@ -84,7 +81,10 @@ h6 {
 }
 
 .btn-outline-purple {
-  @include button-outline-variant($purple, color-yiq($purple), $purple, $purple);
+  @include button-outline-variant($purple,
+    color-yiq($purple),
+    $purple,
+    $purple);
 }
 
 .sf_font {
@@ -96,9 +96,13 @@ h6 {
   padding: 1rem 0;
 }
 
+#map {
+  min-height: 100vh;
+}
+
 .full-height {
   //  height: calc(100vh - 6vmin) !important;
-  height: calc(100vh - (#{$page_border } * 2)) !important;
+  height: calc(100vh - (#{$page_border} * 2)) !important;
 }
 
 .middlepage {
@@ -121,7 +125,6 @@ nav.homemenu {
       float: left;
 
       &:not(:last-child) {
-
         margin-right: 10px;
       }
     }
@@ -140,8 +143,6 @@ nav.homemenu {
     height: 100%;
   }
 }
-
-
 
 .scrollButton {
   position: absolute;
@@ -213,7 +214,8 @@ nav.homemenu {
       //filter: drop-shadow(20px 20px 10px rgba(black, 0.2));
       //box-shadow: 10px 10px 10px black;
       position: relative;
-      right: 0px !important;
+      //right: 50px !important;
+      left: -50px !important;
       width: 60vmin !important;
       height: 60vmin !important;
       -webkit-mask-image: linear-gradient(to right, transparent 25%, black 75%);
@@ -227,6 +229,15 @@ nav.homemenu {
   }
 }
 
+footer {
+  .card {
+    border: none !important;
+
+    .card-footer {
+      background-color: inherit !important;
+    }
+  }
+}
 
 
 .debug {
