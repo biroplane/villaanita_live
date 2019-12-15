@@ -1,16 +1,19 @@
 <?php get_header()?>
 <article class="app">
-  <nav class="navbar d-none">
-    <button class="btn "><i class="material-icons">menu</i></button>
+  <nav class="navbar d-sm-block d-md-none">
+    <button class="btn btn-circle setdrawer"><i class="material-icons">menu</i></button>
   </nav>
   <aside class="drawer">
-    <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-    </ul>
+    <div class="drawer-content">
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+        <li><a href="#">Link 5</a></li>
+      </ul>
+    </div>
+    <div class="backdrop">&nbsp;</div>
   </aside>
   <main>
 
@@ -93,7 +96,8 @@
       <div class="container d-flex flex-column justify-content-center full-height">
         <div class="row">
           <div class="col-md-12">
-            <h1 class="display-1 sf_font">Ricerca e<br>Sviluppo</h1>
+            <h1 class="display-1 sf_font d-none d-md-block">Ricerca e<br>Sviluppo</h1>
+            <h1 class="display-4 sf_font d-block d-md-none">Ricerca e<br>Sviluppo</h1>
           </div>
         </div>
         <div class="row">
@@ -117,8 +121,11 @@
       <div class="container">
         <div class="row">
           <?php 
-            $news = file_get_contents(__DIR__."/.env");
-            print_r($news);
+            print(getenv('NEWS_CATEGORY'));
+            $args = array( 'posts_per_page' => -1, 'category_id' => 2, 'post_status' => 'publish' );
+            $news_posts = get_post( $args );
+            print_r($args);
+            print_r($news_posts);
           ?>
           <div class="col-md-4">
             <h1>CARD</h1>

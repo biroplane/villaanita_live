@@ -1,10 +1,13 @@
 require("./assets/scss/main.scss");
 import "@mdi/font/css/materialdesignicons.css";
 import "bootstrap";
+import "jquery";
 import loadGoogleMapsApi from "load-google-maps-api";
 import "material-design-icons";
+import "popper.js";
 import markerIcon from "./assets/img/marker.png";
 import style from "./assets/js/googlemaps_style";
+
 // import {
 //   Map
 // } from './assets/js/maps';
@@ -40,4 +43,25 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     console.log("MARKER ICON ", marker, map);
   });
+});
+
+$(function() {
+  $(".setdrawer").on("click", e => {
+    e.preventDefault();
+    $(".drawer").addClass("active");
+    console.log("CLICK");
+  });
+  $(".backdrop").on("click", e => {
+    e.preventDefault();
+
+    $(".drawer").removeClass("active");
+  });
+  // $(document).mouseup(function (e) {
+  //   var container = $(".drawer");
+
+  //   // if the target of the click isn't the container nor a descendant of the container
+  //   if (!container.is(e.target) && container.has(e.target).length === 0) {
+  //     container.removeClass('active');
+  //   }
+  // });
 });

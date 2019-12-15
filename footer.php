@@ -40,8 +40,7 @@
     </div>
   </div>
 </footer>
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWHM0sku6eP8S34pskZ7dhPnZ-5ov-DVk&callback=initMap"> -->
-</script>
+
 <script src="<?= get_template_directory_uri()?>/dist/bundle.js"></script>
 </body>
 

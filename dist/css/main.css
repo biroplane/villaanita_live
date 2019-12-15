@@ -23685,8 +23685,7 @@ html,
 body {
   width: 100vw !important;
   height: 100%;
-  font-family: "San Francisco", sans-serif !important;
-  overflow: hidden !important; }
+  font-family: "San Francisco", sans-serif !important; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Steinem", serif !important;
@@ -23696,26 +23695,39 @@ h1, h2, h3, h4, h5, h6 {
   color: #579976 !important; }
 
 .drawer {
-  display: none;
-  width: 30vw;
-  height: 100vh;
-  overflow-y: scroll;
-  padding-top: 2rem;
-  background-color: white;
-  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   position: fixed;
+  width: 100vw;
+  height: 100vh;
   z-index: 9999;
-  top: 0px; }
-  .drawer:before {
-    content: '';
-    width: 70vw !important;
+  left: -100vw;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+  .drawer .drawer-content {
+    width: 50vw;
     height: 100vh;
-    left: 30vw;
+    overflow-y: scroll;
+    padding-top: 2rem;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    top: 0px;
+    position: fixed;
+    z-index: 9998; }
+  .drawer .backdrop {
+    width: 100vw !important;
+    height: 100vh !important;
     position: fixed;
     top: 0px;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.3); }
+    z-index: 9990;
+    opacity: 0;
+    -webkit-transition: opacity 0.1s ease;
+    transition: opacity 0.1s ease;
+    background-color: rgba(0, 0, 0, 0.01); }
+  .drawer.active {
+    display: inline;
+    left: 0; }
+    .drawer.active .backdrop {
+      opacity: 1; }
 
 nav.navbar {
   background: #fff;
@@ -23727,7 +23739,8 @@ nav.navbar {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  z-index: 9999; }
 
 .page {
   min-height: 100vh !important; }
