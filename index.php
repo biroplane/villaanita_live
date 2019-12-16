@@ -1,16 +1,19 @@
 <?php get_header()?>
+
+<?php $main  = home_menu(); ?>
+
 <article class="app">
   <nav class="navbar d-sm-block d-md-none">
     <button class="btn btn-circle setdrawer"><i class="material-icons">menu</i></button>
   </nav>
   <aside class="drawer">
     <div class="drawer-content">
+
       <ul>
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-        <li><a href="#">Link 4</a></li>
-        <li><a href="#">Link 5</a></li>
+        <?php foreach($main as $menu) {?>
+        <li><a href="<?=$menu->url?>"><?=$menu->title ?></a></li>
+        <?php } ?>
+
       </ul>
     </div>
     <div class="backdrop">&nbsp;</div>
@@ -25,11 +28,10 @@
           <div class="row">
             <nav class="homemenu">
               <ul>
-                <li><a href="#centrodiurno">Centro Diurno</a></li>
-                <li><a href="#">Giardino</a></li>
-                <li><a href="#">Ricerca</a></li>
-                <li><a href="#">Mappa</a></li>
-                <li><a href="#">Contatti</a></li>
+                <?php foreach($main as $menu) {?>
+                <li><a href="<?=$menu->url?>"><?=$menu->title ?></a></li>
+                <?php } ?>
+
               </ul>
             </nav>
           </div>
@@ -49,12 +51,16 @@
             <?php
             
             $post= get_post( getenv("HOME_JUMBOTRON") );
-            //var_dump($post);
+            $cat = get_the_category( getenv("HOME_JUMBOTRON") );
+            $category = get_term_link( $cat[0] );
+
+            //var_dump($cat);
+            //var_dump($category);
             ?>
             <p class="lead"><?=$post->post_excerpt?></p>
             <hr class="my-4">
 
-            <a class="btn btn-primary btn-lg" href="<?=$post->link?>" role="button">Learn more</a>
+            <a class="btn btn-primary btn-lg" href="<?=$category."#"?>" role="button">Leggi</a>
           </div>
         </div>
         <div class="row">
@@ -119,27 +125,51 @@
     </article>
     <article class="page page-single border-grey">
       <div class="container">
-        <div class="row">
-          <?php 
-            print(getenv('NEWS_CATEGORY'));
-            $args = array( 'posts_per_page' => -1, 'category_id' => 2, 'post_status' => 'publish' );
-            $news_posts = get_post( $args );
-            print_r($args);
-            print_r($news_posts);
-          ?>
-          <div class="col-md-4">
-            <h1>CARD</h1>
-            <div class="card" style="width:100%">
-              <div class="card-header">Card 1</div>
-              <div class="card-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, id nesciunt.
-                Distinctio aliquid quas error autem minus reprehenderit explicabo voluptatibus fugit. Soluta incidunt
-                sequi ducimus reprehenderit, eveniet nam iusto assumenda?</div>
-              <div class="card-footer"></div>
-            </div>
-
-
+        <div class="row py-4">
+          <div class="col-12">
+            <h1>News &amp; Eventi</h1>
           </div>
         </div>
+        <div class="row">
+
+          <?php 
+
+            $args = array( 'posts_per_page' => -1, 'cat' => getenv('NEWS_CATEGORY'), 'post_status' => 'publish' );
+            $news_posts = get_posts( $args );
+
+            //var_dump($news_posts);
+            foreach($news_posts as $np){
+
+          ?>
+          <?php if (has_post_thumbnail( $np->ID ) ): ?>
+          <?php $media = wp_get_attachment_image_src( get_post_thumbnail_id( $np->ID ), 'single-post-thumbnail' ); ?>
+          <?PHP $permalink = get_permalink( $np->ID ); ?>
+
+
+        </div>
+        <?php endif; ?>
+
+        <div class="col-md-4 col-sm-6 col-xl-3">
+
+          <div class="card" style="width:100%">
+            <div class="card-header">
+              <h4><?=$np->post_title?></h4>
+            </div>
+            <div class="card-image"><img src="<?php print $media[0] ?>"></div>
+            <div class="card-body"><?=$np->post_excerpt?></div>
+            <div class="card-footer">
+              <a href="<?=$permalink?>">
+                <div class="btn btn-outline-secondary btn-block">Leggi
+                </div>
+              </a>
+            </div>
+          </div>
+          <?php
+            }
+?>
+
+        </div>
+      </div>
       </div>
 
     </article>

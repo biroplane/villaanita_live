@@ -1,0 +1,28 @@
+.categorypage {
+  padding-top: 4rem;
+}
+
+.post-card {
+  width: 100% !important;
+  margin-bottom: 3rem;
+  border: none !important;
+
+  border-radius: 0px;
+  padding-bottom: 1rem;
+
+  .card-title {
+    border-bottom: 1px solid lighten($dark-grey, 40%);
+  }
+
+  .card-body {
+    line-height: 1.75rem;
+  }
+
+  .overline {
+    font-family: $body-font-family !important;
+    color: $dark-grey !important;
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5pt !important;
+  }
+}

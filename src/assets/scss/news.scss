@@ -1,0 +1,14 @@
+.card {
+
+
+  .card-image {
+    max-height: 200px !important;
+    overflow: hidden;
+
+    img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+    }
+  }
+}

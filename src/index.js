@@ -19,33 +19,36 @@ var marker = {
   icon: markerIcon
 };
 var el = document.getElementById("map");
+console.log("ECCO EL ", el);
+if (el != null) {
 
-document.addEventListener("DOMContentLoaded", function() {
-  const mapOptions = {
-    zoom: 17,
-    center: marker,
-    styles: style,
-    disableDefaultUI: true,
-    zoomControl: false,
-    scaleControl: false,
-    gestureHandling: "none"
-  };
-  loadGoogleMapsApi({
-    key: process.env.GOOGLE_MAPS_API_KEY
-  }).then(function(googleMaps) {
-    map = new googleMaps.Map(el, mapOptions);
+  document.addEventListener("DOMContentLoaded", function () {
+    const mapOptions = {
+      zoom: 17,
+      center: marker,
+      styles: style,
+      disableDefaultUI: true,
+      zoomControl: false,
+      scaleControl: false,
+      gestureHandling: "none"
+    };
+    loadGoogleMapsApi({
+      key: process.env.GOOGLE_MAPS_API_KEY
+    }).then(function (googleMaps) {
+      map = new googleMaps.Map(el, mapOptions);
 
-    marker = new google.maps.Marker({
-      lat: 41.127492,
-      lng: 16.530003,
-      map: map,
-      icon: markerIcon
+      marker = new google.maps.Marker({
+        lat: 41.127492,
+        lng: 16.530003,
+        map: map,
+        icon: markerIcon
+      });
+      console.log("MARKER ICON ", marker, map);
     });
-    console.log("MARKER ICON ", marker, map);
   });
-});
 
-$(function() {
+}
+$(function () {
   $(".setdrawer").on("click", e => {
     e.preventDefault();
     $(".drawer").addClass("active");

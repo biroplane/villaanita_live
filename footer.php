@@ -27,8 +27,14 @@
             </div>
             <div class="col-md-12">
               <div class="form-group">
-                <label for="exampleFormControlTextarea1">Example textarea</label>
+                <label for="exampleFormControlTextarea1">Messaggio</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-controlz">
+
+                <div class="btn btn-outline-primary btn-disabled">Invia</div>
               </div>
             </div>
           </div>
@@ -40,8 +46,8 @@
     </div>
   </div>
 </footer>
-
 <script src="<?= get_template_directory_uri()?>/dist/bundle.js"></script>
+<?php wp_footer(); ?>
 </body>
 
 </html>
