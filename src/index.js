@@ -1,53 +1,22 @@
 require("./assets/scss/main.scss");
-import "@mdi/font/css/materialdesignicons.css";
-import "bootstrap";
-import "jquery";
-import loadGoogleMapsApi from "load-google-maps-api";
-import "material-design-icons";
-import "popper.js";
-import markerIcon from "./assets/img/marker.png";
-import style from "./assets/js/googlemaps_style";
+// import "@mdi/font/css/materialdesignicons.css";
+// import "bootstrap";
+// import "jquery";
+// import "material-design-icons";
+// import "popper.js";
 
 // import {
 //   Map
 // } from './assets/js/maps';
 
-var map;
-var marker = {
-  lat: 41.127492,
-  lng: 16.530003,
-  icon: markerIcon
-};
-var el = document.getElementById("map");
-console.log("ECCO EL ", el);
-if (el != null) {
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const mapOptions = {
-      zoom: 17,
-      center: marker,
-      styles: style,
-      disableDefaultUI: true,
-      zoomControl: false,
-      scaleControl: false,
-      gestureHandling: "none"
-    };
-    loadGoogleMapsApi({
-      key: process.env.GOOGLE_MAPS_API_KEY
-    }).then(function (googleMaps) {
-      map = new googleMaps.Map(el, mapOptions);
-
-      marker = new google.maps.Marker({
-        lat: 41.127492,
-        lng: 16.530003,
-        map: map,
-        icon: markerIcon
-      });
-      console.log("MARKER ICON ", marker, map);
-    });
-  });
-
-}
+//if (el != null) {
+// document.addEventListener("DOMContentLoaded", function() {
+//   loadGoogleMapsApi({
+//     key: process.env.GOOGLE_MAPS_API_KEY
+//   }).then(function(googleMaps) {
+//     map = new googleMaps.Map(el, mapOptions);
+// });
+//}
 $(function () {
   $(".setdrawer").on("click", e => {
     e.preventDefault();
@@ -59,6 +28,9 @@ $(function () {
 
     $(".drawer").removeClass("active");
   });
+
+  //COOKIE TESTER
+
   // $(document).mouseup(function (e) {
   //   var container = $(".drawer");
 

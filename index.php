@@ -1,7 +1,7 @@
 <?php get_header()?>
 
 <?php $main  = home_menu(); ?>
-
+<!--  -->
 <article class="app">
   <nav class="navbar d-sm-block d-md-none">
     <button class="btn btn-circle setdrawer"><i class="material-icons">menu</i></button>
@@ -43,7 +43,7 @@
     </article>
     <!-- PAGE 2 -->
     <article class="page page-end border-green">
-      <a name="centrodiurno"></a>
+      <a name="struttura"></a>
       <div class="container">
         <div class="row">
           <div class="jumbotron">
@@ -59,7 +59,6 @@
             ?>
             <p class="lead"><?=$post->post_excerpt?></p>
             <hr class="my-4">
-
             <a class="btn btn-primary btn-lg" href="<?=$category."#"?>" role="button">Leggi</a>
           </div>
         </div>
@@ -96,8 +95,8 @@
     <article class="page page-single border-purple ricerca" id="ricerca">
       <a name="ricerca"></a>
       <div class="dna">
-        <img src="<?=get_template_directory_uri(  )?>/src/assets/img/ricerca_crop_fr.png')" class="first">
-        <img src="<?=get_template_directory_uri(  )?>/src/assets/img/ricerca_crop_fr.png')" class="second">
+        <img src="<?=get_template_directory_uri(  )?>/src/assets/img/ricerca_crop_fr.png" class="first">
+        <img src="<?=get_template_directory_uri(  )?>/src/assets/img/ricerca_crop_fr.png" class="second">
       </div>
       <div class="container d-flex flex-column justify-content-center full-height">
         <div class="row">
@@ -124,6 +123,7 @@
 
     </article>
     <article class="page page-single border-grey">
+      <a name="news"></a>
       <div class="container">
         <div class="row py-4">
           <div class="col-12">
@@ -175,6 +175,7 @@
     </article>
     <!-- PAGE 5 GOOGLE MAP -->
     <article class="page page-single border-grey">
+      <a href="" name="contatti"></a>
       <div id="map"></div>
     </article>
 

@@ -1,16 +1,16 @@
 //@import "~bootstrap/scss/_variables";
 
-
 $red: #e92207;
-$green: #579976;
+//$green: #579976;
+$green:#6A753C;
 $purple: #c100fe;
 $dark-grey: #616161;
 $page_border: 3vmin;
 
 :export {
-    red: $red;
-    green: $green;
-    purple: $purple;
-    dark_grey: $dark-grey;
-    page_border: $page_border;
+  red: $red;
+  green: $green;
+  purple: $purple;
+  dark_grey: $dark-grey;
+  page_border: $page_border;
 }

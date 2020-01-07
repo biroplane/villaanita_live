@@ -1,5 +1,6 @@
 const path = require("path");
-const Uglify = require("uglifyjs-webpack-plugin");
+//const Uglify = require("uglifyjs-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
 const webpack = require("webpack");
@@ -9,10 +10,17 @@ const Dotenv = require("dotenv-webpack");
 // const extractScss = new ExtractTextPlugin({
 //   filename: "../css/[name].min.css"
 // });
+
 module.exports = {
   entry: "./src/index.js",
   plugins: [
-    new Uglify(),
+    //new Uglify(),
+    new TerserPlugin({
+      parallel: true,
+      terserOptions: {
+        ecma: 6
+      }
+    }),
     require("autoprefixer"),
     new MiniCssExtractPlugin({
       filename: "css/[name].css",
@@ -29,8 +37,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist")
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
@@ -42,8 +49,7 @@ module.exports = {
       },
       {
         test: /.(sa|sc|c)ss$/,
-        use: [
-          {
+        use: [{
             loader: "style-loader"
           },
           {
