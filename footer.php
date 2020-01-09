@@ -186,6 +186,7 @@ function initMap() {
   type="text/javascript" async></script> -->
 
 <?php wp_footer(); ?>
+
 </body>
 
 </html>

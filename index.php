@@ -21,8 +21,8 @@
   <main>
 
     <!-- PAGE 1 -->
-    <article class="page page-start border-green middlepage">
-      <div class="container-fluid ">
+    <article class="page ">
+      <!-- <div class="container-fluid ">
         <div class="offset-md-3 col-md-6">
           <div class="row"><img src="<?=get_template_directory_uri(  )?>/src/assets/img/logo.png" height="100"></div>
           <div class="row">
@@ -39,10 +39,35 @@
             <div class="img-crop"><img src="<?=get_template_directory_uri()?>/src/assets/img/BZ9A9518.jpg" alt=""></div>
           </div>
         </div>
+      </div> -->
+      <div class="carousel">
+        <div class="item">
+          <img src="<?=get_template_directory_uri()?>/src/assets/img/sollievo.jpg" alt="" srcset="">
+        </div>
+        <div class="item">
+          <img src="<?=get_template_directory_uri()?>/src/assets/img/BZ9A9518.jpg" alt="" srcset="">
+        </div>
+      </div>
+      <div class="container">
+        <div class="row py-4 d-flex align-items-end">
+          <div class=" col-md-1 col-sm-2">
+            <img src="<?=get_template_directory_uri()?>/src/assets/img/logo.png" alt="logo villa anita" height="60">
+          </div>
+          <div class="col-md-8 align-bottom ml-4">
+            <nav class="homemenu">
+              <ul>
+                <?php foreach($main as $menu) {?>
+                <li><a href="<?=$menu->url?>"><?=$menu->title ?></a></li>
+                <?php } ?>
+              </ul>
+            </nav>
+          </div>
+
+        </div>
       </div>
     </article>
     <!-- PAGE 2 -->
-    <article class="page page-end border-green">
+    <article class="page page-single border-green">
       <a name="struttura"></a>
       <div class="container">
         <div class="row">
