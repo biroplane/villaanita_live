@@ -2,53 +2,38 @@
 
 <?php $main  = home_menu(); ?>
 <!--  -->
-<article class="app">
-  <nav class="navbar d-sm-block d-md-none">
-    <button class="btn btn-circle setdrawer"><i class="material-icons">menu</i></button>
-  </nav>
-  <aside class="drawer">
-    <div class="drawer-content">
+<div class="app">
 
-      <ul>
+
+  <nav class="navbar navbar-expand-lg fixed-top d-md-none navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-md-center" id="mainMenu">
+      <ul class="navbar-nav">
         <?php foreach($main as $menu) {?>
-        <li><a href="<?=$menu->url?>"><?=$menu->title ?></a></li>
+        <li class="nav-item"><a class="nav-link" href="<?=$menu->url?>"><?=$menu->title ?></a></li>
         <?php } ?>
 
       </ul>
     </div>
-    <div class="backdrop">&nbsp;</div>
-  </aside>
+  </nav>
   <main>
 
     <!-- PAGE 1 -->
     <article class="page ">
-      <!-- <div class="container-fluid ">
-        <div class="offset-md-3 col-md-6">
-          <div class="row"><img src="<?=get_template_directory_uri(  )?>/src/assets/img/logo.png" height="100"></div>
-          <div class="row">
-            <nav class="homemenu">
-              <ul>
-                <?php foreach($main as $menu) {?>
-                <li><a href="<?=$menu->url?>"><?=$menu->title ?></a></li>
-                <?php } ?>
 
-              </ul>
-            </nav>
-          </div>
-          <div class="row">
-            <div class="img-crop"><img src="<?=get_template_directory_uri()?>/src/assets/img/BZ9A9518.jpg" alt=""></div>
-          </div>
-        </div>
-      </div> -->
       <div class="carousel">
+        <div class="item">
+          <img src="<?=get_template_directory_uri()?>/src/assets/img/villa-anita_fronte.jpg" alt="" srcset="">
+        </div>
         <div class="item">
           <img src="<?=get_template_directory_uri()?>/src/assets/img/sollievo.jpg" alt="" srcset="">
         </div>
-        <div class="item">
-          <img src="<?=get_template_directory_uri()?>/src/assets/img/BZ9A9518.jpg" alt="" srcset="">
-        </div>
       </div>
-      <div class="container">
+      <div class="container d-none d-md-block">
         <div class="row py-4 d-flex align-items-end">
           <div class=" col-md-1 col-sm-2">
             <img src="<?=get_template_directory_uri()?>/src/assets/img/logo.png" alt="logo villa anita" height="60">
@@ -95,7 +80,7 @@
             ?>
             <h4><?=$post->post_title;?></h4>
             <p><?=$post->post_excerpt;?></p>
-            <button class="btn btn-outline-primary btn-sm">Leggi</button>
+            <a href="<?=get_home_url().'/'.$post->post_name?>" class="btn btn-outline-primary btn-sm">Leggi</a>
           </div>
           <div class="col-md-4"><?php
             $post= wp_get_single_post( getenv("HOME_GARDEN") );
@@ -103,7 +88,7 @@
             ?>
             <h4><?=$post->post_title;?></h4>
             <p><?=$post->post_excerpt;?></p>
-            <button class="btn btn-outline-primary btn-sm">Leggi</button>
+            <a href="<?=get_home_url().'/'.$post->post_name?>" class="btn btn-outline-primary btn-sm">Leggi</a>
           </div>
           <div class="col-md-4"><?php
             $post= wp_get_single_post( getenv("HOME_MISSION") );
@@ -111,7 +96,7 @@
             ?>
             <h4><?=$post->post_title;?></h4>
             <p><?=$post->post_excerpt;?></p>
-            <button class="btn btn-outline-primary btn-sm">Leggi</button>
+            <a href="<?=get_home_url().'/'.$post->post_name?>" class="btn btn-outline-primary btn-sm">Leggi</a>
           </div>
         </div>
       </div>
@@ -120,8 +105,8 @@
     <article class="page page-single border-purple ricerca" id="ricerca">
       <a name="ricerca"></a>
       <div class="dna">
-        <img src="<?=get_template_directory_uri(  )?>/src/assets/img/ricerca_crop_fr.png" class="first">
-        <img src="<?=get_template_directory_uri(  )?>/src/assets/img/ricerca_crop_fr.png" class="second">
+        <img src="<?=get_template_directory_uri()?>/src/assets/img/ricerca_crop_fr.png" class="first">
+        <img src="<?=get_template_directory_uri()?>/src/assets/img/ricerca_crop_fr.png" class="second">
       </div>
       <div class="container d-flex flex-column justify-content-center full-height">
         <div class="row">
@@ -135,12 +120,13 @@
           <div class="col-md-6 justify-content-center">
             <p class="text-white">
               <?php
-            $post= wp_get_single_post( getenv("HOME_MISSION") );
+            //$post= wp_get_single_post( getenv("HOME_MISSION") );
+            $post= get_post( getenv("HOME_MISSION") );
             //var_dump($post);
             print $post->post_excerpt;
             ?>
             </p>
-            <button class="btn btn-outline-purple">Scopri di Pi&ugrave;</button>
+            <a class="btn btn-outline-purple" href="<?=get_home_url().'/'.$post->post_name?>">Scopri di Pi&ugrave;</a>
 
           </div>
         </div>
@@ -195,15 +181,15 @@
 
         </div>
       </div>
-      </div>
+</div>
 
-    </article>
-    <!-- PAGE 5 GOOGLE MAP -->
-    <article class="page page-single border-grey">
-      <a href="" name="contatti"></a>
-      <div id="map"></div>
-    </article>
+</article>
+<!-- PAGE 5 GOOGLE MAP -->
+<article class="page page-single border-grey">
+  <a href="" name="contatti"></a>
+  <div id="map"></div>
+</article>
 
-  </main>
-  </div>
-  <?php get_footer()?>
+</main>
+</div>
+<?php get_footer()?>
