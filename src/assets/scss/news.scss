@@ -1,6 +1,22 @@
+.news-bg {
+  background-image: url('../img/news.png');
+  height: 30vh;
+  //filter: blur(10px) !important;
+  margin-bottom: 3rem;
+
+  // background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  // -webkit-background-clip: text;
+  text-align: center;
+
+  h1 {
+    width: 100%;
+    text-shadow: 0px 2px 10px rgba(black, 0.3);
+  }
+
+}
+
 .card {
-
-
   .card-image {
     max-height: 200px !important;
     overflow: hidden;

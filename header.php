@@ -20,19 +20,3 @@ include 'autoload.php';
 </head>
 
 <body>
-  <article class="app">
-    <nav class="navbar d-sm-block d-md-none">
-      <button class="btn btn-circle setdrawer"><i class="material-icons">menu</i></button>
-    </nav>
-    <aside class="drawer">
-      <div class="drawer-content">
-
-        <ul>
-          <?php foreach($main as $menu) {?>
-          <li><a href="<?=$menu->url?>"><?=$menu->title ?></a></li>
-          <?php } ?>
-
-        </ul>
-      </div>
-      <div class="backdrop">&nbsp;</div>
-    </aside>

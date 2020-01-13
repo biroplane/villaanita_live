@@ -1,8 +1,16 @@
 <?php get_header()?>
 
 <?php $main  = home_menu(); ?>
-<!--  -->
-<article class="app">
+<div id="app">
+  <?php require(__DIR__.'/src/components/navbar.php')?>
+  <?php require(__DIR__.'/src/components/main.php')?>
+  <?php require(__DIR__.'/src/components/struttura.php')?>
+  <?php require(__DIR__.'/src/components/ricerca.php')?>
+  <?php require(__DIR__.'/src/components/news.php')?>
+
+
+</div>
+<!-- <article class="app">
   <nav class="navbar d-sm-block d-md-none">
     <button class="btn btn-circle setdrawer"><i class="material-icons">menu</i></button>
   </nav>
@@ -20,7 +28,7 @@
   </aside>
   <main>
 
-    <!-- PAGE 1 -->
+
     <article class="page page-start border-green middlepage">
       <div class="container-fluid ">
         <div class="offset-md-3 col-md-6">
@@ -41,7 +49,7 @@
         </div>
       </div>
     </article>
-    <!-- PAGE 2 -->
+
     <article class="page page-end border-green">
       <a name="struttura"></a>
       <div class="container">
@@ -91,7 +99,7 @@
         </div>
       </div>
     </article>
-    <!-- PAGE 3 RICERCA -->
+
     <article class="page page-single border-purple ricerca" id="ricerca">
       <a name="ricerca"></a>
       <div class="dna">
@@ -166,19 +174,19 @@
           </div>
           <?php
             }
-?>
+          ?>
 
         </div>
       </div>
       </div>
 
     </article>
-    <!-- PAGE 5 GOOGLE MAP -->
+
     <article class="page page-single border-grey">
       <a href="" name="contatti"></a>
       <div id="map"></div>
     </article>
 
   </main>
-  </div>
-  <?php get_footer()?>
+  </div> -->
+<?php get_footer()?>
