@@ -1,3 +1,4 @@
+<a name="struttura"></a>
 <div class="page-half page-single border-green py-4 d-flex align-items-center">
   <div class="container">
     <div class="row">

@@ -1,3 +1,4 @@
+<a name="news"></a>
 <article class="page page-single border-grey">
   <a name="news"></a>
   <div class="container-fluid">
@@ -16,6 +17,7 @@
 
             $args = array( 'posts_per_page' => -1, 'cat' => getenv('NEWS_CATEGORY'), 'post_status' => 'publish' );
             $news_posts = get_posts( $args );
+            
 
             //var_dump($news_posts);
             foreach($news_posts as $np){

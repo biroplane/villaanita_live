@@ -1,3 +1,4 @@
+<a name="ricerca"></a>
 <article class="page page-single border-purple ricerca" id="ricerca">
   <a name="ricerca"></a>
   <div class="dna">
