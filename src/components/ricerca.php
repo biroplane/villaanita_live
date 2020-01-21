@@ -17,15 +17,15 @@
       <div class="col-md-6 justify-content-center">
         <p class="text-white">
           <?php
-    //$args = array( 'category' =>17 ,'numberposts'=>-1 );
-    $researchpost = getenv("HOME_MISSION");
-     setup_postdata($post); 
-    //var_dump($post);
-    ?>
+              $research_post= wp_get_single_post( getenv("RESEARCH") );
+              //setup_postdata( $post );
+              //var_dump($post);
+              ?>
 
-          <?= get_the_excerpt(); ?>
+
+          <?= $research_post->post_excerpt; ?>
         </p>
-        <a class="btn btn-outline-purple" href="<?php the_permalink( )?>">Scopri di Pi&ugrave;</a>
+        <a class="btn btn-outline-purple" href="<?php the_permalink( $research_post)?>">Scopri di Pi&ugrave;</a>
 
 
       </div>

@@ -1,6 +1,15 @@
-.categorypage {
-  padding-top: 4rem;
+.category-thumbnail {
+  overflow: hidden;
+  height: 30vmax;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+  }
 }
+
 
 .post-card {
   width: 100% !important;

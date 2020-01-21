@@ -1,20 +1,27 @@
-<?php $main  = home_menu(); ?>
+  <nav class="nav navbar navbar-expand-md fixed-top <?= is_home() ? 'homenav':'navbar-light bg-light'?>">
+    <div class="container">
 
-<nav class="navbar navbar-expand-md fixed-top homenav">
-  <a class="navbar-brand" href="<?=get_home_url(  )?>"><img
-      src="<?=get_template_directory_uri(  )?>/src/assets/img/logo.png" height="50"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"><i class="material-icons">menu</i></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
-      <?php foreach($main as $menu) {?>
-      <li class="nav-item"><a class="nav-link" href="<?=$menu->url?>"><?=$menu->title ?></a></li>
-      <?php } ?>
+      <a class="navbar-brand" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>">
+        <img src="<?=get_template_directory_uri(  )?>/src/assets/img/logo.png" height="50"
+          alt="<?php bloginfo( 'name' )?>"></a>
 
-    </ul>
 
-  </div>
-  <div class="nav-item"><i class="material-icons">search</i></div>
-</nav>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigazione"
+        aria-controls="navigazione" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-iconz"><i class="material-icons">menu</i></span>
+      </button>
+      <?php
+ wp_nav_menu( array(
+ 'menu' => get_post_meta( $post->ID, 'transparent_menu', true),
+
+ 'depth' => 2,
+ 'container' => 'div',
+ 'container_class' => 'collapse navbar-collapse',
+ 'container_id' => 'navigazione',
+ 'menu_class' => 'navbar-nav mr-auto',
+ 'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+ 'walker' => new wp_bootstrap_navwalker())
+ );
+ ?>
+    </div>
+  </nav>

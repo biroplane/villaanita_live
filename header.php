@@ -13,8 +13,8 @@ include 'autoload.php';
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <link rel="stylesheet" href="<?= get_template_directory_uri( )?>/dist/css/main.css">
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="446c1e0f-e662-46e6-895f-3572fee9f028"
-    data-blockingmode="auto" type="text/javascript"></script>
+  <!-- <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="446c1e0f-e662-46e6-895f-3572fee9f028"
+    data-blockingmode="auto" type="text/javascript"></script> -->
   <?php wp_head(); ?>
 
 </head>

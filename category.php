@@ -1,6 +1,15 @@
 <?php get_header()?>
-<article class="page page-single border-green py-4">
-  <?php require(__DIR__.'/navbar.php')?>
+<article class="page   py-4">
+  <?php require(__DIR__.'/src/components/navbar.php')?>
+  <div class="container-fluid mb-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="category-thumbnail">
+          <img src="<?=get_template_directory_uri()?>/src/assets/img/home.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container categorypage">
     <div class="row">
 
@@ -15,19 +24,22 @@
         $media=null;
       } 
          ?>
+      <div class="col-md-4 col-sm-6 col-xl-3">
 
-      <a name="<?=$post->post_name?>"></a>
-      <div class="card post-card">
-        <div class="card-title">
-          <h1><?= the_title(  )?></h1>
-          <h4 class="overline"><?= the_date( )?></h4>
+        <a name="<?=$post->post_name?>"></a>
+        <div class="card ">
+          <?php if($media){
+            
+            ?>
+          <div class="card-img-top"><img src="<?=$media[0]?>" class="img-fluid"></div>
+          <?php      }?>
+          <div class="card-title display-4">
+            <h1><?= the_title(  )?></h1>
+
+          </div>
+          <div class="card-body"><?=the_excerpt()?></div>
+          <div class="card-footer"></div>
         </div>
-        <?php if($media){
-?>
-        <div class="card-img"><img src="<?=$media?>"></div>
-        <?php      }?>
-        <div class="card-body"><?=the_content()?></div>
-        <div class="card-footer"></div>
       </div>
       <?php
     endwhile;

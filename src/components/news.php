@@ -5,7 +5,7 @@
 
     <div class="row ">
       <div class="col-12 news-bg d-flex align-items-center text-center w-100">
-        <h1 class="display-1 font-weight-bold text-white text-uppercase">News &amp; Eventi</h1>
+        <h1 class="custom-big-text font-weight-bold text-white text-uppercase">News &amp; Eventi</h1>
       </div>
     </div>
   </div>

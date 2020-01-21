@@ -1,4 +1,5 @@
 <?PHP
+
 add_theme_support( 'post-thumbnails' );
 
 function register_my_menu() {
@@ -17,8 +18,26 @@ register_sidebar(array(
 )
 );
 
-function home_menu(){
-  $home_menu = wp_get_nav_menu_items( 'transparent_menu' );
-  //print_r($home_menu);
-  return $home_menu;
+function register_navwalker(){
+  require_once get_template_directory() . '/wp_bootstrap_navwalker.php';
 }
+add_action( 'after_setup_theme', 'register_navwalker' );
+
+function villaanita_custom_logo_setup() {
+
+ $defaults = array(
+ 'height'      => 50,
+ 'width'       => 50,
+ 'flex-height' => true,
+ 'flex-width'  => true,
+ 'header-text' => array( 'site-title', 'site-description' ),
+ );
+}
+add_theme_support( 'custom-logo');
+//add_action( 'before_setup_theme', 'villaanita_custom_logo_setup' );
+
+
+// function home_menu(){
+//   return "Ciao";
+// }
+?>

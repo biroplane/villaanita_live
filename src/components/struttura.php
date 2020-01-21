@@ -20,11 +20,12 @@
       </div>
       <div class="row">
         <?php
-      $args = array( 'category' =>17 ,'numberposts'=>-1 );
+      $args = array( 'category' =>getenv("STRUCT") ,'numberposts'=>-1 );
       $postslist = get_posts( $args );    
       foreach ($postslist as $post) :  setup_postdata($post); 
       ?>
         <div class="col-md-3 col-sm-3">
+
           <h5 class="text-uppercase font-weight-bold"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
         </div>
 

@@ -1,76 +1,17 @@
 <a name="contatti"></a>
-<footer height="500">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="container-fluid">
-          <div class="card my-4" style="width: 100%">
-            <img src="<?=get_template_directory_uri(  )?>/src/assets/img/logo.png" alt="Villa Anita logo" width="100"
-              class="mx-4">
-            <div class="card-body">
-              <p>Strada Provinciale, 2<br>70038 - Terlizzi (Ba)<br>P.Iva 01234567</p>
-            </div>
-            <!-- <div class="card-footer">
-              <button class="btn btn-outline-primary"><i class="mdi mdi-facebook"></i></button>
-              <button class="btn btn-outline-primary"><i class="mdi mdi-twitter"></i></button>
-              <button class="btn btn-outline-primary"><i class="mdi mdi-instagram"></i></button>
-            </div> -->
-          </div>
-          <div class="container-fluid ">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group"><label for="">Nome</label><input type="text" class="form-control"></div>
-              </div>
-              <div class="col-md-12">
-                <div class="form-group"><label for="">Email</label><input type="text" class="form-control"></div>
-              </div>
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="exampleFormControlTextarea1">Messaggio</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="form-controlz">
+<?php if(is_home(  )) {
+  include(__DIR__.'/src/components/footer_home.php');
+} else {
+  include(__DIR__.'/src/components/footer_other.php');
 
-                  <div class="btn btn-outline-primary btn-disabled">Invia</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <div class="col-md-8">
-        <div id="map"></div>
-      </div>
-    </div>
-    <!-- <div class="row d-flexalign-items-baseline">
-      <div class="col-md-4 col-xs-12">
-        <div class="card my-4" style="width: 100%">
-          <img src="<?=get_template_directory_uri(  )?>/src/assets/img/logo.png" alt="Villa Anita logo" width="100"
-            class="mx-4">
-          <div class="card-body">
-            <p>Strada Provinciale, 2<br>70038 - Terlizzi (Ba)<br>P.Iva 01234567</p>
-          </div>
-          <div class="card-footer">
-            <button class="btn btn-outline-primary"><i class="mdi mdi-facebook"></i></button>
-            <button class="btn btn-outline-primary"><i class="mdi mdi-twitter"></i></button>
-            <button class="btn btn-outline-primary"><i class="mdi mdi-instagram"></i></button>
-          </div>
-        </div>
-
-      </div>
-      <div class="col-md-8 col-xs-12">
-        
-        </div>
-      </div>
-
-
-
-    </div> -->
-  </div>
-</footer>
+}
+?>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="<?= get_template_directory_uri()?>/dist/bundle.js"></script>
 <script>
 var el = document.getElementById("map");
@@ -194,15 +135,18 @@ const mapOptions = {
 };
 
 function initMap() {
-  map = new google.maps.Map(el, mapOptions);
+  if (el) {
 
-  marker = new google.maps.Marker({
-    lat: 41.127492,
-    lng: 16.530003,
-    map: map,
+    map = new google.maps.Map(el, mapOptions);
 
-  });
-  console.log("MARKER ICON ", marker, map);
+    marker = new google.maps.Marker({
+      lat: 41.127492,
+      lng: 16.530003,
+      map: map,
+
+    });
+    console.log("MARKER ICON ", marker, map);
+  }
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWHM0sku6eP8S34pskZ7dhPnZ-5ov-DVk&callback=initMap" async
