@@ -1,0 +1,9 @@
+footer {
+  min-height: 500px;
+}
+
+footer #map {
+  min-height: 500px;
+  height: 100% !important;
+}
+/*# sourceMappingURL=footer.css.map */

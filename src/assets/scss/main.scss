@@ -1,12 +1,12 @@
-@import "./variables.scss";
+@import "./import/_variables.scss";
 
 $theme-colors: ("primary": $green,
   "danger": #ff36a5);
 
-@import "~bootstrap/scss/bootstrap-reboot";
-@import "~bootstrap/scss/bootstrap.scss";
+@import "../../../node_modules/bootstrap/scss/bootstrap-reboot";
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 
-@import "./typography.scss";
+@import "./import/_typography.scss";
 
 $heading-font-family: "San Francisco";
 $body-font-family: "San Francisco";
@@ -48,7 +48,7 @@ h6 {
 }
 
 .h-50 {
-  height: 30vh !important;
+  min-height: 30vh !important;
 }
 
 .flex-wrapper-100 {
@@ -71,12 +71,12 @@ h6 {
   }
 }
 
-@import "./drawer.scss";
-@import "./navbar.scss";
-@import "./page.scss";
-@import "./news.scss";
-@import "./category.scss";
-@import "./footer.scss";
+@import "./import/_category.scss";
+@import "./import/_drawer.scss";
+@import "./import/_navbar.scss";
+@import "./import/_page.scss";
+@import "./import/_news.scss";
+@import "./import/_footer.scss";
 
 // .btn-circle {
 //   border-radius: 50%;
@@ -214,7 +214,10 @@ nav.homemenu {
 
 #ricerca {
   background-image: url("../img/ricerca_bg.png");
-  background-size: cover;
+  background-size: cover !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   overflow: hidden;

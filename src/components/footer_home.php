@@ -1,7 +1,7 @@
 <footer height="500">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4 col-12">
+      <div class="col-md-4 col-12 pb-4">
         <div class="container-fluid">
           <div class="card my-4" style="width: 100%">
             <img src="<?=get_template_directory_uri(  )?>/src/assets/img/logo.png" alt="Villa Anita logo" width="100"
