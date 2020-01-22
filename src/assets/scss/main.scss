@@ -182,6 +182,20 @@ nav.homemenu {
   height: 3rem;
 }
 
+.single-title {
+  background-color: $green;
+  height: 15rem;
+  display: flex;
+  align-items: flex-end;
+  padding: .5rem 1rem;
+
+  h1 {
+    color: white !important;
+  }
+
+  margin-bottom: 2rem;
+}
+
 .img-crop {
   width: 100%;
   height: 40vmin;
