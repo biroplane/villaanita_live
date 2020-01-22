@@ -1,6 +1,7 @@
 <?php get_header()?>
 <div id="app" class="inner">
-  <!-- <?php require(__DIR__.'/src/components/navbar.php')?> -->
+  <?php require(__DIR__.'/src/components/navbar.php')?>
+  <div class="spacer"></div>
   <main class="border-grey">
 
     <?php while ( have_posts() ) :
