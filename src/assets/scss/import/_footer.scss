@@ -1,5 +1,11 @@
 footer {
-  min-height: 500px;
+  &.footer-home {
+    min-height: 500px;
+  }
+
+  &.footer-custom {
+    border: 1px solid red;
+  }
 
 
   #map {

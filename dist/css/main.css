@@ -23903,11 +23903,15 @@ h1, h2, h3, h4, h5, h6 {
     -o-object-fit: cover !important;
        object-fit: cover !important; }
 
-footer {
+footer.footer-home {
   min-height: 500px; }
-  footer #map {
-    min-height: 500px;
-    height: 100% !important; }
+
+footer.footer-custom {
+  border: 1px solid red; }
+
+footer #map {
+  min-height: 500px;
+  height: 100% !important; }
 
 .btn-outline-purple {
   color: #c100fe;
