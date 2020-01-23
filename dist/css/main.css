@@ -23956,6 +23956,10 @@ footer #map {
   min-height: 500px;
   height: 100% !important; }
 
+span.wpcf7-form-control-wrap input,
+span.wpcf7-form-control-wrap textarea {
+  margin-bottom: 1rem; }
+
 .btn-outline-purple {
   color: #c100fe;
   border-color: #c100fe; }
