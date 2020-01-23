@@ -81,7 +81,10 @@ h6 {
 
 
 span.wpcf7-form-control-wrap {
-  @extend .form-control;
+  input {
+
+    @extend .form-control;
+  }
 }
 
 // .btn-circle {
