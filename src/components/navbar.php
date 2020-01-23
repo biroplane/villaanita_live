@@ -20,17 +20,8 @@
         'fallback_cb'=>'wp_bootstrapnavwalker::fallback',
         'walker'=>new wp_bootstrap_navwalker()
       ) );
-//  wp_nav_menu( array(
-//  'menu' => get_post_meta( $post->ID, 'transparent_menu', true),
 
-//  'depth' => 2,
-//  'container' => 'div',
-//  'container_class' => 'collapse navbar-collapse',
-//  'container_id' => 'navigazione',
-//  'menu_class' => 'navbar-nav mr-auto',
-//  'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-//  'walker' => new wp_bootstrap_navwalker())
-//  );
  ?>
     </div>
   </nav>
+  <h1 style="margin-top:100px"><?= is_home(  )?'true':'false'?></h1>

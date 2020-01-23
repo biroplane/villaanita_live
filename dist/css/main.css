@@ -23907,7 +23907,7 @@ footer.footer-home {
   min-height: 500px; }
 
 footer.footer-custom {
-  border: 1px solid red; }
+  min-height: 100px; }
 
 footer #map {
   min-height: 500px;

@@ -12,6 +12,7 @@
         <div class="col-12">
           <div class="single-title">
             <h1><?php the_title(); ?></h1>
+
           </div>
         </div>
         <div class="col-12"><?php the_content( ); ?></div>
