@@ -2,7 +2,7 @@
 <?php if(is_home(  )) {
   include(__DIR__.'/src/components/footer_home.php');
 } else {
-  include(__DIR__.'/src/components/footer_other.php');
+  include(__DIR__.'/src/components/footer_other.php'); 
 
 }
 ?>

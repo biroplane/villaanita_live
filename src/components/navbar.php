@@ -24,4 +24,4 @@
  ?>
     </div>
   </nav>
-  <h1 style="margin-top:100px"><?= is_home(  )?'true':'false'?></h1>
+  <!-- <h1 style="margin-top:100px"><?= is_home(  )?'true':'false'?></h1> -->
