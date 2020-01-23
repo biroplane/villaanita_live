@@ -11,17 +11,26 @@
         <span class="navbar-toggler-iconz"><i class="material-icons">menu</i></span>
       </button>
       <?php
- wp_nav_menu( array(
- 'menu' => get_post_meta( $post->ID, 'transparent_menu', true),
+      wp_nav_menu( array(
+        'theme_location'=>'trn_menu',
+        'container'=>'div',
+        'container_class'=>'collapse navbar-collapse',
+        'container_id'=>'mainNav',
+        'menu_class'=>'navbar-nav mr-auto',
+        'fallback_cb'=>'wp_bootstrapnavwalker::fallback',
+        'walker'=>new wp_bootstrap_navwalker()
+      ) );
+//  wp_nav_menu( array(
+//  'menu' => get_post_meta( $post->ID, 'transparent_menu', true),
 
- 'depth' => 2,
- 'container' => 'div',
- 'container_class' => 'collapse navbar-collapse',
- 'container_id' => 'navigazione',
- 'menu_class' => 'navbar-nav mr-auto',
- 'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
- 'walker' => new wp_bootstrap_navwalker())
- );
+//  'depth' => 2,
+//  'container' => 'div',
+//  'container_class' => 'collapse navbar-collapse',
+//  'container_id' => 'navigazione',
+//  'menu_class' => 'navbar-nav mr-auto',
+//  'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+//  'walker' => new wp_bootstrap_navwalker())
+//  );
  ?>
     </div>
   </nav>
