@@ -81,7 +81,9 @@ h6 {
 
 
 span.wpcf7-form-control-wrap {
-  input {
+
+  input,
+  textarea {
 
     @extend .form-control;
   }
