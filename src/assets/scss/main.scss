@@ -75,6 +75,7 @@ h6 {
 @import "./import/_drawer.scss";
 @import "./import/_navbar.scss";
 @import "./import/_page.scss";
+@import "./import/_ricerca.scss";
 @import "./import/_news.scss";
 @import "./import/_footer.scss";
 
@@ -242,72 +243,7 @@ nav.homemenu {
   height: 60vmin;
 }
 
-#ricerca {
-  background-image: url("../img/ricerca_bg.png");
-  background-size: cover !important;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  overflow: hidden;
 
-  .parallax {
-    border: 1px solid lime;
-    top: 0px !important;
-    height: 100vh !important;
-    width: 100vw;
-  }
-
-  .dna {
-    width: 100% !important;
-    height: 100vh !important;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    object-fit: fill !important;
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
-
-    img {
-      @include media-breakpoint-down(md) {
-        display: none;
-        animation: none;
-      }
-    }
-
-    img.first {
-      //filter: drop-shadow(20px 20px 10px rgba(black, 0.2));
-      //box-shadow: 10px 10px 10px black;
-      width: 30vmin !important;
-      height: 30vmin !important;
-      opacity: 0.65;
-      animation: float 6.2s ease-in-out infinite;
-      animation-delay: 1.3s;
-      -webkit-mask-image: linear-gradient(to right, transparent 5%, black 75%);
-      mask-image: linear-gradient(to right, transparent 25%, black 75%);
-      //   height: 100% !important;
-    }
-
-    img.second {
-      //filter: drop-shadow(20px 20px 10px rgba(black, 0.2));
-      //box-shadow: 10px 10px 10px black;
-      position: relative;
-      //right: 50px !important;
-      left: -50px !important;
-      width: 60vmin !important;
-      height: 60vmin !important;
-      -webkit-mask-image: linear-gradient(to right, transparent 25%, black 75%);
-      mask-image: linear-gradient(to right, transparent 25%, black 75%);
-      animation: float 6s ease-in-out infinite;
-    }
-  }
-
-  .rstext {
-    z-index: 3 !important;
-  }
-}
 
 footer {
   .card {

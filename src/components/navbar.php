@@ -8,7 +8,7 @@
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigazione"
         aria-controls="navigazione" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-iconz"><i class="material-icons">menu</i></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <?php
       wp_nav_menu( array(
