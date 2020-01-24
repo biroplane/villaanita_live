@@ -6,9 +6,9 @@
           alt="<?php bloginfo( 'name' )?>"></a>
 
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigazione"
-        aria-controls="navigazione" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="material-icons">menu</i>
       </button>
       <?php
       wp_nav_menu( array(
