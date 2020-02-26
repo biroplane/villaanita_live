@@ -205,6 +205,11 @@ nav.homemenu {
 
 .single-title {
   background-color: $green;
+
+  &.medcare {
+    background-color: $red !important;
+  }
+
   height: 15rem;
   display: flex;
   align-items: flex-end;

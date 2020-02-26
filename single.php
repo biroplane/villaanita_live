@@ -10,7 +10,8 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="single-title">
+
+          <div class="single-title <?=has_category('medical-care') ? 'medcare':''?> ">
             <h1><?php the_title(); ?></h1>
 
           </div>
