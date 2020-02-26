@@ -10,6 +10,7 @@ error_reporting(E_ALL);
   <?php require(__DIR__.'/src/components/navbar.php')?>
   <?php require(__DIR__.'/src/components/main.php')?>
   <?php require(__DIR__.'/src/components/struttura.php')?>
+  <?php require(__DIR__.'/src/components/medicalcare.php')?>
   <?php require(__DIR__.'/src/components/ricerca.php')?>
   <?php require(__DIR__.'/src/components/news.php')?>
 

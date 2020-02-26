@@ -1,5 +1,7 @@
 .news-bg {
-  background-image: url('../img/news.png');
+  background-image: url('../img/news.jpg');
+  background-size: cover;
+  background-position: center bottom;
   height: 30vh;
   //filter: blur(10px) !important;
   margin-bottom: 3rem;

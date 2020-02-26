@@ -1,0 +1,18 @@
+.text-red {
+  color: $red !important;
+
+  * {
+    color: $red !important;
+
+  }
+}
+
+.card-borderless {
+  display: flex;
+  border: none !important;
+  align-items: center;
+
+  .mc-thumbnail {
+    width: 50%;
+  }
+}

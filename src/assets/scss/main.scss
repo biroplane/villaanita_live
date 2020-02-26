@@ -75,6 +75,7 @@ h6 {
 @import "./import/_drawer.scss";
 @import "./import/_navbar.scss";
 @import "./import/_page.scss";
+@import "./import/_medicalcare.scss";
 @import "./import/_ricerca.scss";
 @import "./import/_news.scss";
 @import "./import/_footer.scss";
@@ -127,6 +128,13 @@ span.wpcf7-form-control-wrap {
 
 .btn-outline-purple {
   @include button-outline-variant($purple,
+    color-yiq($purple),
+    $purple,
+    $purple);
+}
+
+.btn-purple {
+  @include button-variant($purple,
     color-yiq($purple),
     $purple,
     $purple);

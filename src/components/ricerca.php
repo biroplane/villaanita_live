@@ -1,10 +1,10 @@
 <a name="ricerca"></a>
 <article class="page page-single border-purple ricerca" id="ricerca">
   <a name="ricerca"></a>
-  <div class="dna">
+  <!-- <div class="dna">
     <img src="<?=get_template_directory_uri(  )?>/src/assets/img/ricerca_crop_fr.png" class="first">
     <img src="<?=get_template_directory_uri(  )?>/src/assets/img/ricerca_crop_fr.png" class="second">
-  </div>
+  </div> -->
   <div class="container d-flex flex-column justify-content-center full-height">
     <div class="row">
       <div class="col-md-12">
@@ -25,9 +25,9 @@
 
           <?= $research_post->post_excerpt; ?>
         </p>
-        <a class="btn btn-outline-purple" href="<?php the_permalink( $research_post)?>">Scopri di Pi&ugrave;</a>
+        <a class="btn btn-purple" href="<?php the_permalink( $research_post)?>">Scopri di Pi&ugrave;</a>
 
-
+        <?php wp_reset_postdata() ?>
       </div>
     </div>
   </div>
