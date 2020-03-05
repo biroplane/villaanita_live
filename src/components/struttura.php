@@ -12,8 +12,8 @@
               //setup_postdata( $post );
               //var_dump($post);
               ?>
-        <h1 class="text-primary text-uppercase col-md-12"><a href="<?php the_permalink( $post )?>" role="button">Villa
-            Anita</a></h1>
+        <h1 class="text-primary text-uppercase col-md-12"><a href="<?php the_permalink( $post )?>" role="button">
+            <img src="<?=get_template_directory_uri()?>/src/assets/img/logo.png" height="200"></a></h1>
         <hr />
         <p class="col-md-12"><?=$post->post_excerpt;?></p>
 

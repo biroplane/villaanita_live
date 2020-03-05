@@ -10,7 +10,8 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="single-title">
+          <div class="single-title <?=strpos('Medical Care',get_the_title())>-1 ? 'medcare':''?>">
+            <?=strpos('Medical Care',get_the_title()) >-1 ? 'medcare':'' ?>
             <h1><?php the_title(); ?></h1>
           </div>
         </div>

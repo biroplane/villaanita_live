@@ -12,22 +12,23 @@
   integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
   integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWHM0sku6eP8S34pskZ7dhPnZ-5ov-DVk&callback=initMap" async
-  defer></script>
 
 <!-- <script src="<?= get_template_directory_uri()?>/dist/bundle.js"></script> -->
+<?php if(is_home()) {?>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWHM0sku6eP8S34pskZ7dhPnZ-5ov-DVk&callback=initMap" async
+  defer></script>
 <script>
 var el = document.getElementById("map");
 console.log("ECCO EL ", el);
 var map;
-var marker = {
+var mks = {
   lat: 41.127492,
   lng: 16.530003,
 
 };
-const mapOptions = {
+var mapOptions = {
   zoom: 17,
-  center: marker,
+  center: mks,
   styles: [{
       'featureType': 'all',
       'elementType': 'all',
@@ -138,21 +139,23 @@ const mapOptions = {
 };
 
 function initMap() {
-  if (el) {
+  var myLatLng = {
+    lat: 41.127492,
+    lng: 16.530003
+  };
 
-    map = new google.maps.Map(el, mapOptions);
+  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-    marker = new google.maps.Marker({
-      lat: 41.127492,
-      lng: 16.530003,
-      map: map,
-
-    });
-    console.log("MARKER ICON ", marker, map);
-  }
+  var marker = new google.maps.Marker({
+    position: mks,
+    map: map,
+    animation: google.maps.Animation.DROP,
+    title: 'Hello World!',
+    image: '<?= get_template_directory_uri()?>/src/assets/img/marker.png'
+  });
 }
 </script>
-
+<?php } ?>
 <!-- <script id="CookieDeclaration" src="https://consent.cookiebot.com/446c1e0f-e662-46e6-895f-3572fee9f028/cd.js"
   type="text/javascript" async></script> -->
 

@@ -31,7 +31,7 @@
           <a href="<?php the_permalink(); ?>">
             <div class="card card-borderless">
               <img src="<?= get_the_post_thumbnail_url()?>" class="mc-thumbnail">
-              <div class="card-body text-red text-uppercase font-weight-bold">
+              <div class="card-body text-red text-uppercase text-center font-weight-bold">
                 <?php the_title(); ?>
               </div>
             </div>

@@ -11,7 +11,8 @@
       <div class="row">
         <div class="col-12">
 
-          <div class="single-title <?=has_category('medical-care') ? 'medcare':''?> ">
+          <div
+            class="single-title <?=has_category('medical-care') ? 'medcare':''?> <?=mb_strpos('Medical Care',get_the_title())>-1 ? 'medcare':''?> ">
             <h1><?php the_title(); ?></h1>
 
           </div>
