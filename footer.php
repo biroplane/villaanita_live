@@ -156,8 +156,8 @@ function initMap() {
 }
 </script>
 <?php } ?>
-<script id="CookieDeclaration" src="https://consent.cookiebot.com/446c1e0f-e662-46e6-895f-3572fee9f028/cd.js"
-  type="text/javascript" async></script>
+<!-- <script id="CookieDeclaration" src="https://consent.cookiebot.com/446c1e0f-e662-46e6-895f-3572fee9f028/cd.js"
+  type="text/javascript" async></script> -->
 
 <?php wp_footer(); ?>
 </body>
