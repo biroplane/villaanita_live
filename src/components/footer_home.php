@@ -9,7 +9,8 @@
             <div class="card-body">
               <p>Strada Provinciale, 2<br>70038 - Terlizzi (Ba)<br>P.Iva 01234567</p>
             </div>
-            <div class="card-footer">Cookie Policy & Privacy</div>
+            <div class="card-footer"><a href="https://www.villaanita.net/informativa-sulla-privacy-e-sui-cookie/">Cookie
+                Policy & Privacy</a></div>
             <!-- <div class="card-footer">
               <button class="btn btn-outline-primary"><i class="mdi mdi-facebook"></i></button>
               <button class="btn btn-outline-primary"><i class="mdi mdi-twitter"></i></button>
@@ -41,7 +42,7 @@
           <div class="container-fluid">
             <div class="row">
 
-              <?php echo do_shortcode( '[contact-form-7 id="479" title="Contact form 1"]' );?>
+              <?php echo do_shortcode( '[contact-form-7 id="7" title="Contattaci"]' );?>
             </div>
           </div>
         </div>
